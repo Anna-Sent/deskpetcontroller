@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">CarBotController</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="accelerometer_with_min_delay_in_milliseconds_is_available">"Success! There's an accelerometer with min delay %d milliseconds."</string>
+    <string name="not_streaming_accelerometer_is_available">"Success! There's not streaming accelerometer."</string>
+    <string name="accelerometer_is_available">"Success! There's an accelerometer."</string>
+    <string name="accelerometer_is_not_available">"Sorry, there are no accelerometers on your device. You can't play this game."</string>
+    <string name="accuracy">Accuracy is %d</string>
+    <string name="timestamp">Timestamp is %d</string>
+    <string name="values">Gx = %1$.1f; Gy = %2$.1f; Gz = %3$.1f</string>
+
+</resources>
