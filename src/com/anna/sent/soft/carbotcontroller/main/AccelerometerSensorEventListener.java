@@ -47,12 +47,22 @@ public class AccelerometerSensorEventListener implements SensorEventListener,
 			} else if (Gx < 0) {
 				rotateRight();
 			}
-		} else if (rel_Gz < 0.7 && Gz > 0) {
-			moveBackward();
-		} else if (rel_Gz > 0.7 && Gz > 0) {
-			moveForward();
-		} else if (Gz < 0) {
-			moveBackward();
+		} else if (rel_Gz < 0.7 && Gz > 0 && rel_Gy < 0.9) {
+			if (rel_Gx < 0.1) {
+				moveBackward();
+			} else if (Gx > 0) {
+				moveToLeftBackward();
+			} else if (Gx < 0) {
+				moveToRightBackward();
+			}
+		} else if (rel_Gz > 0.7 && Gz > 0 && rel_Gy < 0.9) {
+			if (rel_Gx < 0.1) {
+				moveForward();
+			} else if (Gx > 0) {
+				moveToLeftForward();
+			} else if (Gx < 0) {
+				moveToRightForward();
+			}
 		} else if (rel_Gy > 0.9) {
 			stop();
 		}
