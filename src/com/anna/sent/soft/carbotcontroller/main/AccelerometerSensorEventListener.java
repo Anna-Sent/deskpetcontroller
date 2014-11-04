@@ -47,7 +47,7 @@ public class AccelerometerSensorEventListener implements SensorEventListener,
 			} else if (Gx < 0) {
 				rotateRight();
 			}
-		} else if (rel_Gz < 0.7 && Gz > 0 && rel_Gy < 0.9) {
+		} else if (rel_Gz < 0.5 && Gz > 0 && rel_Gy < 0.9 && Gy > 0) {
 			if (rel_Gx < 0.1) {
 				moveBackward();
 			} else if (Gx > 0) {
@@ -55,7 +55,7 @@ public class AccelerometerSensorEventListener implements SensorEventListener,
 			} else if (Gx < 0) {
 				moveToRightBackward();
 			}
-		} else if (rel_Gz > 0.7 && Gz > 0 && rel_Gy < 0.9) {
+		} else if (rel_Gz > 0.5 && Gz > 0 && rel_Gy < 0.9) {
 			if (rel_Gx < 0.1) {
 				moveForward();
 			} else if (Gx > 0) {
