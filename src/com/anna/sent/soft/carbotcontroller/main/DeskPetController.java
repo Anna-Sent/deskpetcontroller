@@ -11,14 +11,26 @@ import android.media.SoundPool;
 import android.os.Build;
 
 public abstract class DeskPetController {
-	protected static enum CommandType {
+	public static enum CommandType {
 		BOOSTER, FIRE, FIRE2, LBRB, LBRF, LBRS, LFRB, LFRF, LFRS, LSRB, LSRF, LSRS, MODE, TRICK, TRICK2, MCHAG, TCHAG, SPEC, BWD, FWD, LEFT, RIGHT, STOP, TEAM
 	}
 
-	protected static class Command {
+	public static class Command {
 		private CommandType type;
 		private int soundId;
 		private String fileName;
+
+		public CommandType getType() {
+			return type;
+		}
+
+		public int getSoundId() {
+			return soundId;
+		}
+
+		public String getFileName() {
+			return fileName;
+		}
 
 		Command(CommandType type, String fileName) {
 			this.type = type;
@@ -88,11 +100,15 @@ public abstract class DeskPetController {
 		soundPool = null;
 	}
 
-	protected abstract Command[] getAvailableCommands();
+	public abstract Command[] getAvailableCommands();
 
 	public boolean isCommandAvailable(CommandType commandType) {
 		Command command = commands.get(commandType);
 		return command != null;
+	}
+
+	public Command getCommand(CommandType commandType) {
+		return commands.get(commandType);
 	}
 
 	protected void play(CommandType commandType) {

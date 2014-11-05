@@ -20,7 +20,7 @@ public class CarBotController extends TwoMotorDeskPetController {
 	 * TODO test that all resources are available
 	 */
 	@Override
-	protected Command[] getAvailableCommands() {
+	public Command[] getAvailableCommands() {
 		List<Command> commands = new ArrayList<Command>();
 
 		commands.add(new Command(CommandType.BOOSTER, getName("BOOSTER")));
