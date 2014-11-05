@@ -55,21 +55,30 @@ public abstract class DeskPetController {
 		return isFlip;
 	}
 
-	private int option = 0;
-
-	protected int getOption() {
-		return option;
+	public void setFlip(boolean value) {
+		isFlip = value;
 	}
 
-	public String[] getOptions() {
-		return null;
+	private int modelIndex = 0;
+
+	protected int getModelIndex() {
+		return modelIndex;
+	}
+
+	public void setModelIndex(int value) {
+		modelIndex = value;
+	}
+
+	public String[] getModels() {
+		return new String[0];
+	}
+
+	public DeskPetController() {
 	}
 
 	@SuppressWarnings("deprecation")
 	@TargetApi(Build.VERSION_CODES.LOLLIPOP)
-	public DeskPetController(Context context, boolean isFlip, int option) {
-		this.isFlip = isFlip;
-		this.option = option;
+	public void resume(Context context) {
 		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
 			soundPool = new SoundPool.Builder()
 					.setAudioAttributes(
@@ -83,6 +92,7 @@ public abstract class DeskPetController {
 			soundPool = new SoundPool(MAX_STREAMS, AudioManager.STREAM_MUSIC, 0);
 		}
 
+		commands.clear();
 		Command[] availableCommands = getAvailableCommands();
 		for (Command command : availableCommands) {
 			commands.put(command.type, command);
@@ -95,7 +105,7 @@ public abstract class DeskPetController {
 		}
 	}
 
-	public void release() {
+	public void pause() {
 		soundPool.release();
 		soundPool = null;
 	}
@@ -112,10 +122,14 @@ public abstract class DeskPetController {
 	}
 
 	protected void play(CommandType commandType) {
+		play(commandType, PRIORITY, LOOP);
+	}
+
+	protected void play(CommandType commandType, int priority, int loop) {
 		Command command = commands.get(commandType);
 		int soundId = command == null ? 0 : command.soundId;
 		if (soundId > 0) {
-			soundPool.play(soundId, LEFT_VOLUME, RIGHT_VOLUME, PRIORITY, LOOP,
+			soundPool.play(soundId, LEFT_VOLUME, RIGHT_VOLUME, priority, loop,
 					RATE);
 		}
 	}

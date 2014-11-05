@@ -33,11 +33,12 @@ public class AccelerometerSensorEventListener implements SensorEventListener,
 	}
 
 	private long mLastTimestamp = 0;
+	private final static long TIME_ELAPSED = 1000000000; // 1 sec, in
+															// nanoseconds
 
 	@Override
 	public void onSensorChanged(SensorEvent event) {
-		if (event.timestamp - mLastTimestamp < 1000000000) { // 1 sec, in
-																// nanoseconds
+		if (event.timestamp - mLastTimestamp < TIME_ELAPSED) {
 			return;
 		}
 

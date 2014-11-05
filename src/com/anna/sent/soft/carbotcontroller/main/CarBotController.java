@@ -3,16 +3,10 @@ package com.anna.sent.soft.carbotcontroller.main;
 import java.util.ArrayList;
 import java.util.List;
 
-import android.content.Context;
-
 public class CarBotController extends TwoMotorDeskPetController {
-	public CarBotController(Context context, boolean isFlip, int option) {
-		super(context, isFlip, option);
-	}
-
 	private String getName(String commandName) {
 		return "wave/carbot" + (isFlip() ? "Flip" : "") + "/" + commandName
-				+ "Carbot" + String.valueOf(getOption() + 1)
+				+ "Carbot" + String.valueOf(getModelIndex() + 1)
 				+ (isFlip() ? "Flip" : "") + (isFlip() ? ".wav" : ".WAV");
 	}
 
@@ -40,7 +34,7 @@ public class CarBotController extends TwoMotorDeskPetController {
 	}
 
 	@Override
-	public String[] getOptions() {
+	public String[] getModels() {
 		return new String[] { "Channel A", "Channel B", "Channel C" };
 	}
 }
