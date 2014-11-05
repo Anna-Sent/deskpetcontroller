@@ -32,8 +32,16 @@ public class AccelerometerSensorEventListener implements SensorEventListener,
 		mMotionListeners.remove(listener);
 	}
 
+	private long mLastTimestamp = 0;
+
 	@Override
 	public void onSensorChanged(SensorEvent event) {
+		if (event.timestamp - mLastTimestamp < 1000000000) { // 1 sec, in
+																// nanoseconds
+			return;
+		}
+
+		mLastTimestamp = event.timestamp;
 		double Gx = event.values[0], sqr_Gx = Gx * Gx;
 		double Gy = event.values[1], sqr_Gy = Gy * Gy;
 		double Gz = event.values[2], sqr_Gz = Gz * Gz;

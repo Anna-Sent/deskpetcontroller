@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 import com.anna.sent.soft.carbotcontroller.main.AccelerometerSensorEventListener;
+import com.anna.sent.soft.carbotcontroller.main.CarBotController;
 import com.anna.sent.soft.carbotcontroller.main.MotionListener;
 
 public class MainActivity extends MainActivityBase implements MotionListener,
@@ -17,6 +18,7 @@ public class MainActivity extends MainActivityBase implements MotionListener,
 	private Sensor mSensor;
 	private AccelerometerSensorEventListener mAccelerometerListener;
 	private TextView mTextViewTitle, mTextView1, mTextView2;
+	private CarBotController mCarBot;
 
 	@TargetApi(Build.VERSION_CODES.GINGERBREAD)
 	@Override
@@ -30,6 +32,7 @@ public class MainActivity extends MainActivityBase implements MotionListener,
 		mSensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
 		mSensor = mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
 		mAccelerometerListener = new AccelerometerSensorEventListener();
+		mCarBot = new CarBotController(getApplicationContext(), false, 1);
 		if (mSensor != null) {
 			if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.GINGERBREAD) {
 				int minDelay = mSensor.getMinDelay(); // in microseconds
@@ -54,6 +57,7 @@ public class MainActivity extends MainActivityBase implements MotionListener,
 	protected void onResume() {
 		super.onResume();
 		mAccelerometerListener.addListener(this);
+		mAccelerometerListener.addListener(mCarBot);
 		mAccelerometerListener.setLogListener(this);
 		mSensorManager.registerListener(mAccelerometerListener, mSensor,
 				SensorManager.SENSOR_DELAY_GAME);
@@ -64,6 +68,7 @@ public class MainActivity extends MainActivityBase implements MotionListener,
 		super.onPause();
 		mSensorManager.unregisterListener(mAccelerometerListener);
 		mAccelerometerListener.setLogListener(null);
+		mAccelerometerListener.removeListener(mCarBot);
 		mAccelerometerListener.removeListener(this);
 	}
 
