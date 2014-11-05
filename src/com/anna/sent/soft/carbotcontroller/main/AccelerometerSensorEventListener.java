@@ -33,7 +33,7 @@ public class AccelerometerSensorEventListener implements SensorEventListener,
 	}
 
 	private long mLastTimestamp = 0;
-	private final static long TIME_ELAPSED = 1000000000; // 1 sec, in
+	private final static long TIME_ELAPSED = 1000000000; // 1 second, in
 															// nanoseconds
 
 	@Override
@@ -64,6 +64,8 @@ public class AccelerometerSensorEventListener implements SensorEventListener,
 			} else if (Gx < 0) {
 				moveToRightBackward();
 			}
+		} else if (rel_Gz > 0.9 && Gz < 0) {
+			stop();
 		} else if (rel_Gz > 0.5 && Gz > 0 && rel_Gy < 0.9) {
 			if (rel_Gx < 0.1) {
 				moveForward();

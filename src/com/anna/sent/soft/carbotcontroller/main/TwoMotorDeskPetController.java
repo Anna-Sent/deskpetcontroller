@@ -2,15 +2,20 @@ package com.anna.sent.soft.carbotcontroller.main;
 
 public abstract class TwoMotorDeskPetController extends DeskPetController
 		implements MotionListener {
-	private CommandType lastCommand = null;
-
-	// timestamp
+	private CommandType lastCommand;
+	private long lastTimestamp;
+	private final static long TIME_ELAPSED = 4000; // 4 seconds, in milliseconds
 
 	private void playMotionCommand(CommandType command) {
-		if (lastCommand != command) {
-			play(command, command == CommandType.LSRS ? 1 : 0,
-					command == CommandType.LSRS ? 2 : 1);
+		long timestamp = System.currentTimeMillis();
+		if (lastCommand != command || timestamp - lastTimestamp > TIME_ELAPSED) {
+			int priority = command == CommandType.LSRS ? 1 : 0;
+			int loop = command == CommandType.LSRS ? 2
+					: (command == CommandType.LFRF
+							|| command == CommandType.LBRB ? 1 : 0);
+			play(command, priority, loop);
 			lastCommand = command;
+			lastTimestamp = timestamp;
 		}
 	}
 
