@@ -55,7 +55,7 @@ public class MainActivity extends MainActivityBase implements MotionListener,
 	@Override
 	protected void onResume() {
 		super.onResume();
-		mCarBot = new CarBotController(getApplicationContext(), false, 1);
+		mCarBot = new CarBotController(getApplicationContext(), false, 0);
 		mAccelerometerListener.addListener(this);
 		mAccelerometerListener.addListener(mCarBot);
 		mAccelerometerListener.setLogListener(this);
