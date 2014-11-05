@@ -49,6 +49,10 @@ public abstract class DeskPetController {
 		return option;
 	}
 
+	public String[] getOptions() {
+		return null;
+	}
+
 	@SuppressWarnings("deprecation")
 	@TargetApi(Build.VERSION_CODES.LOLLIPOP)
 	public DeskPetController(Context context, boolean isFlip, int option) {
@@ -79,15 +83,16 @@ public abstract class DeskPetController {
 		}
 	}
 
+	public void release() {
+		soundPool.release();
+		soundPool = null;
+	}
+
 	protected abstract Command[] getAvailableCommands();
 
 	public boolean isCommandAvailable(CommandType commandType) {
 		Command command = commands.get(commandType);
 		return command != null;
-	}
-
-	public String[] getOptions() {
-		return null;
 	}
 
 	protected void play(CommandType commandType) {

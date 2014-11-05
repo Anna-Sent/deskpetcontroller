@@ -32,7 +32,6 @@ public class MainActivity extends MainActivityBase implements MotionListener,
 		mSensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
 		mSensor = mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
 		mAccelerometerListener = new AccelerometerSensorEventListener();
-		mCarBot = new CarBotController(getApplicationContext(), false, 1);
 		if (mSensor != null) {
 			if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.GINGERBREAD) {
 				int minDelay = mSensor.getMinDelay(); // in microseconds
@@ -56,6 +55,7 @@ public class MainActivity extends MainActivityBase implements MotionListener,
 	@Override
 	protected void onResume() {
 		super.onResume();
+		mCarBot = new CarBotController(getApplicationContext(), false, 1);
 		mAccelerometerListener.addListener(this);
 		mAccelerometerListener.addListener(mCarBot);
 		mAccelerometerListener.setLogListener(this);
@@ -70,6 +70,8 @@ public class MainActivity extends MainActivityBase implements MotionListener,
 		mAccelerometerListener.setLogListener(null);
 		mAccelerometerListener.removeListener(mCarBot);
 		mAccelerometerListener.removeListener(this);
+		mCarBot.release();
+		mCarBot = null;
 	}
 
 	@Override
