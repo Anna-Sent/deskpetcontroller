@@ -1,4 +1,4 @@
-package com.anna.sent.soft.carbotcontroller;
+package com.anna.sent.soft.deskpetcontroller;
 
 import android.annotation.TargetApi;
 import android.content.Context;
@@ -8,9 +8,9 @@ import android.os.Build;
 import android.os.Bundle;
 import android.widget.TextView;
 
-import com.anna.sent.soft.carbotcontroller.main.AccelerometerSensorEventListener;
-import com.anna.sent.soft.carbotcontroller.main.CarBotController;
-import com.anna.sent.soft.carbotcontroller.main.MotionListener;
+import com.anna.sent.soft.deskpetcontroller.main.AccelerometerSensorEventListener;
+import com.anna.sent.soft.deskpetcontroller.main.CarBotController;
+import com.anna.sent.soft.deskpetcontroller.main.MotionListener;
 
 public class MainActivity extends MainActivityBase implements MotionListener,
 		AccelerometerSensorEventListener.LogListener {

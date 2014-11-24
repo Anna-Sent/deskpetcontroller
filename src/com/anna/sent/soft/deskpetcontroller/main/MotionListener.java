@@ -1,4 +1,4 @@
-package com.anna.sent.soft.carbotcontroller.main;
+package com.anna.sent.soft.deskpetcontroller.main;
 
 public interface MotionListener {
 	public void moveForward();

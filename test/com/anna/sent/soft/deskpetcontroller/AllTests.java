@@ -1,4 +1,4 @@
-package com.anna.sent.soft.carbotcontroller;
+package com.anna.sent.soft.deskpetcontroller;
 
 import junit.framework.Test;
 import junit.framework.TestSuite;

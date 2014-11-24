@@ -1,13 +1,13 @@
-package com.anna.sent.soft.carbotcontroller;
+package com.anna.sent.soft.deskpetcontroller;
 
 import junit.framework.Assert;
 import android.content.Context;
 import android.test.AndroidTestCase;
 
-import com.anna.sent.soft.carbotcontroller.main.CarBotController;
-import com.anna.sent.soft.carbotcontroller.main.DeskPetController;
-import com.anna.sent.soft.carbotcontroller.main.DeskPetController.Command;
-import com.anna.sent.soft.carbotcontroller.main.DeskPetController.CommandType;
+import com.anna.sent.soft.deskpetcontroller.main.CarBotController;
+import com.anna.sent.soft.deskpetcontroller.main.DeskPetController;
+import com.anna.sent.soft.deskpetcontroller.main.DeskPetController.Command;
+import com.anna.sent.soft.deskpetcontroller.main.DeskPetController.CommandType;
 
 public class ResourcesTest extends AndroidTestCase {
 	public void testResources() throws Throwable {

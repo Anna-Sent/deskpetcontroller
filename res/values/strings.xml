@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">CarBotController</string>
+    <string name="app_name">DeskPetController</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
     <string name="accelerometer_with_min_delay_in_milliseconds_is_available">"Success! There's an accelerometer with min delay %d milliseconds."</string>

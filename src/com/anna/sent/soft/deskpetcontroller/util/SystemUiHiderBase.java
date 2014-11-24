@@ -1,4 +1,4 @@
-package com.anna.sent.soft.carbotcontroller.util;
+package com.anna.sent.soft.deskpetcontroller.util;
 
 import android.app.Activity;
 import android.view.View;

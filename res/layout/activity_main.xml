@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#0099cc"
-    tools:context="com.anna.sent.soft.carbotcontroller.MainActivity" >
+    tools:context="com.anna.sent.soft.deskpetcontroller.MainActivity" >
 
     <LinearLayout
         android:id="@+id/fullscreen_content"

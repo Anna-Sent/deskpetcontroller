@@ -1,4 +1,4 @@
-package com.anna.sent.soft.carbotcontroller.util;
+package com.anna.sent.soft.deskpetcontroller.util;
 
 import android.annotation.TargetApi;
 import android.app.Activity;

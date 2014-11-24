@@ -1,6 +1,4 @@
-package com.anna.sent.soft.carbotcontroller;
-
-import com.anna.sent.soft.carbotcontroller.util.SystemUiHider;
+package com.anna.sent.soft.deskpetcontroller;
 
 import android.annotation.TargetApi;
 import android.app.Activity;
@@ -9,6 +7,8 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.MotionEvent;
 import android.view.View;
+
+import com.anna.sent.soft.deskpetcontroller.util.SystemUiHider;
 
 /**
  * An example full-screen activity that shows and hides the system UI (i.e.
