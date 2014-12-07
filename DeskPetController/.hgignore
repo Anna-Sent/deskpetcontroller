@@ -1,7 +1,0 @@
-syntax: glob
-*.class
-bin//*
-gen//*
-.settings//*
-.hgignore
-*.jar
