@@ -1,5 +1,6 @@
 package com.anna.sent.soft.deskpetcontroller;
 
+import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.os.Build;
@@ -16,6 +17,7 @@ import com.anna.sent.soft.deskpetcontroller.util.SystemUiHider;
  * 
  * @see SystemUiHider
  */
+@SuppressLint("Registered")
 public class MainActivityBase extends Activity {
 	/**
 	 * Whether or not the system UI should be auto-hidden after

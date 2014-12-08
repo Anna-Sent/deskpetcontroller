@@ -1,5 +1,6 @@
 package com.anna.sent.soft.deskpetcontroller.util;
 
+import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.os.Build;
@@ -42,6 +43,7 @@ public class SystemUiHiderHoneycomb extends SystemUiHiderBase {
 	 * Constructor not intended to be called by clients. Use
 	 * {@link SystemUiHider#getInstance} to obtain an instance.
 	 */
+	@SuppressLint("InlinedApi")
 	protected SystemUiHiderHoneycomb(Activity activity, View anchorView,
 			int flags) {
 		super(activity, anchorView, flags);
