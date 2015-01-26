@@ -605,4 +605,8 @@
         id="WrongViewCast"
         severity="ignore" />
 
+    <issue
+        id="RtlHardcoded"
+        severity="ignore" />
+
 </lint>

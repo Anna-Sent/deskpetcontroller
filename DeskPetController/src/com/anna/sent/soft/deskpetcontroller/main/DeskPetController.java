@@ -12,7 +12,7 @@ import android.os.Build;
 
 public abstract class DeskPetController {
 	public static enum CommandType {
-		BOOSTER, FIRE, FIRE2, LBRB, LBRF, LBRS, LFRB, LFRF, LFRS, LSRB, LSRF, LSRS, MODE, TRICK, TRICK2, MCHAG, TCHAG, SPEC, BWD, FWD, LEFT, RIGHT, STOP, TEAM
+		BOOSTER, FIRE, FIRE2, LBRB, LBRF, LBRS, LFRB, LFRF, LFRS, LSRB, LSRF, LSRS, MODE, TRICK, TRICK2, MCHAG, TCHAG, SPEC, BWD, FWD, LEFT_, RIGHT_, STOP, TEAM
 	}
 
 	public static class Command {
