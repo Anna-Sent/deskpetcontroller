@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.anna.sent.soft.deskpetcontroller"
     android:versionCode="1"
     android:versionName="1.0" >
@@ -7,12 +8,13 @@
     <!--
          uses-feature
         android:name="android.hardware.sensor.accelerometer"
-        android:required="false" /
+        android:required="false" /
     -->
 
     <uses-sdk
         android:minSdkVersion="7"
-        android:targetSdkVersion="21" />
+        android:targetSdkVersion="21"
+        tools:ignore="OldTargetApi" />
 
     <application
         android:allowBackup="true"
